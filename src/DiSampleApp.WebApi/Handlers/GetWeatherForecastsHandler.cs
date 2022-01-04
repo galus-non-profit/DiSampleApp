@@ -1,6 +1,7 @@
-namespace DiSampleApp.WebApi;
+namespace DiSampleApp.WebApi.Handlers;
 
 using DiSampleApp.WebApi.Interfaces;
+using DiSampleApp.WebApi.Query;
 
 internal sealed class GetWeatherForecastsHandler : IRequestHandler<GetWeatherForecasts, IReadOnlyList<WeatherForecast>>
 {
@@ -19,7 +20,7 @@ internal sealed class GetWeatherForecastsHandler : IRequestHandler<GetWeatherFor
         this.logger = logger;
         this.myScopedService = myScopedService;
         this.mySingletonService = mySingletonService;
-        this.myTransientService = myTransientService;//https://localhost:7256/swagger/index.html
+        this.myTransientService = myTransientService;
     }
 
     public async Task<IReadOnlyList<WeatherForecast>> Handle(GetWeatherForecasts request, CancellationToken cancellationToken)

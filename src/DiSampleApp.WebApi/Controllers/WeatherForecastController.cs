@@ -1,6 +1,7 @@
 namespace DiSampleApp.WebApi.Controllers;
 
 using DiSampleApp.WebApi.Interfaces;
+using DiSampleApp.WebApi.Query;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController, Route("[controller]")]
@@ -18,7 +19,7 @@ public class WeatherForecastController : ControllerBase
         this.logger = logger;
         this.myScopedService = myScopedService;
         this.mySingletonService = mySingletonService;
-        this.myTransientService = myTransientService;//https://localhost:7256/swagger/index.html
+        this.myTransientService = myTransientService;
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
